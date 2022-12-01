@@ -1,7 +1,7 @@
 package models
 
 import (
-	"go.mogodb.org/mongo-driver/bson/primitive"
+	"go.mongodb.org/mongo-driver/bson/primitive"
 )
 
 type Entry struct {
