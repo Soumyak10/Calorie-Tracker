@@ -2,7 +2,7 @@ module github.com/Soumyak10/Calorie-Tracker
 
 go 1.19
 
-require go.mongodb.org/mongo-driver v1.11.0
+require go.mongodb.org/mongo-driver v1.11.1
 
 require (
 	github.com/gin-contrib/cors v1.4.0 // indirect

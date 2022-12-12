@@ -108,7 +108,7 @@ func UpdateEntry(c *gin.Context) {
 		bson.M{"_id": docID},
 		bson.M{
 			"dish":     entry.Dish,
-			"fat":      entry.Fats,
+			"fats":     entry.Fats,
 			"carbs":    entry.Carbs,
 			"proteins": entry.Proteins,
 			"calories": entry.Calories,
