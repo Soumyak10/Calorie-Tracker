@@ -11,3 +11,19 @@ body {
     #d6ebec 70%
   );
 }
+
+.entry{
+  background-color: rgba(0, 0, 0, 0.5);
+  box-shadow: 10px 10px rgba(0, 0, 0, 0.25);
+  color: black;
+}
+
+.homepage{
+  background: linear-gradient(135deg, rgba(0, 240, 255, 0.78) 35.83%, rgba(113, 0, 255, 0.44) 56.34%);
+}
+
+.bg{
+background: rgba(0, 0, 0, 0.44);
+box-shadow: 8px 8px 3px rgba(0, 0, 0, 0.25);
+border-radius: 60px;
+}
