@@ -1,14 +1,28 @@
-import Error from "./components/Error";
+import Modal from "./components/Modal";
 import "./App.css";
 import Header from "./components/Header";
 import Entries from "./components/Entries";
+import { useState } from "react";
 
 function App() {
+  const [addNewEntry, setAddNewEntry] = useState(false);
+
   return (
     <div className="App">
       <Header />
+
+      {addNewEntry ? (
+        <Modal addNewEntry={addNewEntry} setAddNewEntry={setAddNewEntry} />
+      ) : (
+        ""
+      )}
       <div className="text-center">
-        <h2 className="text-4xl">
+        <h2
+          className="text-4xl cursor-pointer hover:underline"
+          onClick={() => {
+            setAddNewEntry(true);
+          }}
+        >
           Add Your Today's Calorie
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -24,7 +38,7 @@ function App() {
           </svg>
         </h2>
       </div>
-      <Entries />
+      <Entries addNewEntry={addNewEntry} setAddNewEntry={setAddNewEntry} />
     </div>
   );
 }

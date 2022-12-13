@@ -3,11 +3,10 @@ import Entry from "./Entry";
 
 import axios from "axios";
 
-function Entries() {
+function Entries({ addNewEntry, setAddNewEntry }) {
   const [entries, setEntries] = useState([]);
   const [refreshData, setRefreshData] = useState(false);
   const [changeEntry, setChangeEntry] = useState({ change: false, id: 0 });
-  const [addNewEntry, setAddNewEntry] = useState(false);
   const [newEntry, setNewEntry] = useState({
     dish: "",
     calories: 0,
@@ -80,7 +79,7 @@ function Entries() {
       {entries != null &&
         entries.map((entry, ind) => (
           <Entry
-            key={entry.id}
+            key={entry._id}
             entryData={entry}
             deleteSingleEntry={deleteSingleEntry}
             setChangeEntry={setChangeEntry}
