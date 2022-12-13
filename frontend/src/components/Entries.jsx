@@ -1,14 +1,20 @@
 import React, { useState, useEffect } from "react";
 import Entry from "./Entry";
-// import { getAllEntries } from "../utils";
+
 import axios from "axios";
 
 function Entries() {
   const [entries, setEntries] = useState([]);
   const [refreshData, setRefreshData] = useState(false);
-  const [addNewEntry, setAddNewEntry] = useState([]);
-  const [changeEntry, setChangeNewEntry] = useState(false);
-  const [deleteEntry, setDeleteEntry] = useState(false);
+  const [changeEntry, setChangeEntry] = useState({ change: false, id: 0 });
+  const [addNewEntry, setAddNewEntry] = useState(false);
+  const [newEntry, setNewEntry] = useState({
+    dish: "",
+    calories: 0,
+    fats: 0,
+    proteins: 0,
+    carbs: 0,
+  });
 
   useEffect(() => {
     getAllEntries(setEntries);
@@ -72,7 +78,14 @@ function Entries() {
   return (
     <div className="z-50 m-3">
       {entries != null &&
-        entries.map((entry, ind) => <Entry key={entry.id} entryData={entry} />)}
+        entries.map((entry, ind) => (
+          <Entry
+            key={entry.id}
+            entryData={entry}
+            deleteSingleEntry={deleteSingleEntry}
+            setChangeEntry={setChangeEntry}
+          />
+        ))}
     </div>
   );
 }

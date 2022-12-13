@@ -1,38 +1,54 @@
 import React from "react";
 
-import { deleteSingleEntry } from "../utils";
-
-function Entry({ entryData }) {
+function Entry({ entryData, deleteSingleEntry, setChangeEntry }) {
+  // function changeEntry() {
+  //   setChangeEntry({
+  //     change: true,
+  //     id: entryData._id,
+  //   });
+  // }
   return (
-    <div className="my-5 flex justify-between entry">
-      <div className="flex flex-col w-4/5 ">
+    <div className="my-5 flex justify-between entry items-center">
+      <div className="p-4 flex flex-col w-4/5 text-white">
         <div className="w-full flex">
-          <span className="w-1/3">Food: {entryData.dish} </span>
-          <span className="w-1/3">Calorie: {entryData.calories} </span>
+          <div className="w-1/3 font-bold">Food : {entryData.dish}</div>
+          <div className="w-1/3 font-bold">
+            Calorie : <span className="font-light">{entryData.calories}</span>{" "}
+            Cal
+          </div>
         </div>
         <div className="w-full flex">
-          <span className="w-1/3">Protein: {entryData.proteins} </span>
-          <span className="w-1/3">Carbs: {entryData.carbs} </span>
-          <span className="w-1/3">Fats: {entryData.fats} </span>
+          <div className="w-1/3 font-bold">
+            Protein : <span className="font-light">{entryData.proteins}</span> g
+          </div>
+          <div className="w-1/3 font-bold">
+            Carbs : <span className="font-light">{entryData.carbs}</span> g
+          </div>
+          <div className="w-1/3 font-bold">
+            Fats : <span className="font-light">{entryData.fats}</span> g
+          </div>
         </div>
       </div>
 
-      <div className="flex align-center w-20">
+      <div className="flex justify-center w-28">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
-          fill="currentColor"
-          className="w-6 h-6"
+          fill="white"
+          className="w-8 h-8 m-2"
         >
           <path d="M21.731 2.269a2.625 2.625 0 00-3.712 0l-1.157 1.157 3.712 3.712 1.157-1.157a2.625 2.625 0 000-3.712zM19.513 8.199l-3.712-3.712-12.15 12.15a5.25 5.25 0 00-1.32 2.214l-.8 2.685a.75.75 0 00.933.933l2.685-.8a5.25 5.25 0 002.214-1.32L19.513 8.2z" />
         </svg>
 
-        <button onClick={() => deleteSingleEntry(entryData.id)}>
+        <button
+          className="w-8 h-8 m-2"
+          onClick={() => deleteSingleEntry(entryData._id)}
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
-            fill="currentColor"
-            className="w-6 h-6"
+            fill="white"
+            className=""
           >
             <path
               fillRule="evenodd"
