@@ -1,21 +1,14 @@
-import Modal from "./components/Modal";
 import "./App.css";
 import Header from "./components/Header";
 import Entries from "./components/Entries";
 import { useState } from "react";
 
 function App() {
-  const [addNewEntry, setAddNewEntry] = useState(false);
+  const [addNewEntry, setAddNewEntry] = useState(true);
 
   return (
     <div className="App">
       <Header />
-
-      {addNewEntry ? (
-        <Modal addNewEntry={addNewEntry} setAddNewEntry={setAddNewEntry} />
-      ) : (
-        ""
-      )}
       <div className="text-center">
         <h2
           className="text-4xl cursor-pointer hover:underline"

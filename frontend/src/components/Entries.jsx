@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import Modal from "./Modal";
+
 import Entry from "./Entry";
 
 import axios from "axios";
@@ -76,8 +78,19 @@ function Entries({ addNewEntry, setAddNewEntry }) {
 
   return (
     <div className="z-50 m-3">
+      {addNewEntry ? (
+        <Modal
+          addNewEntry={addNewEntry}
+          setAddNewEntry={setAddNewEntry}
+          newEntry={newEntry}
+          setRefreshData={setRefreshData}
+          addSingleEntry={addSingleEntry}
+        />
+      ) : (
+        ""
+      )}
       {entries != null &&
-        entries.map((entry, ind) => (
+        entries.map((entry) => (
           <Entry
             key={entry._id}
             entryData={entry}
