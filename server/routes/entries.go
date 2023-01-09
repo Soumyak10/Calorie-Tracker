@@ -32,7 +32,7 @@ func AddEntry(c *gin.Context) {
 		fmt.Println(validationErr)
 		return
 	}
-	// entry.ID = primitive.NewObjectID()
+	entry.ID = primitive.NewObjectID()
 	result, insertErr := entryCollection.InsertOne(ctx, entry)
 	if insertErr != nil {
 		msg := fmt.Sprintf("order item was not created")
