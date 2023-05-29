@@ -14,6 +14,7 @@ func main() {
 		port = "8000"
 	}
 
+	gin.SetMode(gin.ReleaseMode)
 	router := gin.New()
 	router.Use(gin.Logger())
 	router.Use(cors.Default())
